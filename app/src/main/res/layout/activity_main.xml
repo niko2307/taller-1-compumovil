@@ -6,44 +6,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:gravity="bottom">
+
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="28dp"
         android:text="Explorar destinos"
         tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="381dp"
-
-        android:layout_below="@id/spinner"/>
+        tools:layout_editor_absoluteY="381dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:layout_marginTop="20dp"
         android:text="favoritos"
         tools:layout_editor_absoluteX="154dp"
-        tools:layout_editor_absoluteY="447dp"
-        android:layout_below="@id/button"/>
+        tools:layout_editor_absoluteY="447dp" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/button2"
+        android:layout_marginTop="25dp"
         android:text="Recomendaciones"
         tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="527dp"
-        android:layout_below="@id/button2"/>
-
+        tools:layout_editor_absoluteY="527dp" />
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:entries="@array/opciones"
+        android:gravity="center"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="311dp"
-        android:entries="@array/opciones"
 
         />
 

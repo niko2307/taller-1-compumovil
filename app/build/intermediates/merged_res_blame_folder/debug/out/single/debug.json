@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-main-33:\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-merged_res-31:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-main-33:\\mipmap-anydpi\\ic_launcher_round.xml"
-    },
-    {
         "merged": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-merged_res-31:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-main-33:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
         "merged": "C:\\Users\\Niko\\.gradle\\daemon\\8.0\\com.example.taller1.app-merged_res-31:\\mipmap-anydpi_ic_launcher.xml.flat",
