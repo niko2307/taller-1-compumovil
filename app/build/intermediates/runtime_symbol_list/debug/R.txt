@@ -3162,6 +3162,7 @@ int id beginOnFirstDraw 0x7f090059
 int id beginning 0x7f09005a
 int id bestChoice 0x7f09005b
 int id blocking 0x7f09005c
+int id botonAgregarFavoritos 0x7f0901f3
 int id bottom 0x7f09005d
 int id bounce 0x7f09005e
 int id bounceBoth 0x7f09005f
@@ -3429,6 +3430,7 @@ int id progress_horizontal 0x7f090163
 int id radio 0x7f090164
 int id ratio 0x7f090165
 int id rectangles 0x7f090166
+int id recyclerViewFavoritos 0x7f0901f9
 int id report_drawn 0x7f090167
 int id reverseSawtooth 0x7f090168
 int id right 0x7f090169
@@ -3520,6 +3522,11 @@ int id textSpacerNoButtons 0x7f0901be
 int id textSpacerNoTitle 0x7f0901bf
 int id textStart 0x7f0901c0
 int id textTop 0x7f0901c1
+int id textViewCategoria 0x7f0901f4
+int id textViewNombre 0x7f0901f5
+int id textViewPais 0x7f0901f6
+int id textViewPlan 0x7f0901f7
+int id textViewPrecio 0x7f0901f8
 int id text_input_end_icon 0x7f0901c2
 int id text_input_error_icon 0x7f0901c3
 int id text_input_start_icon 0x7f0901c4
@@ -3683,8 +3690,9 @@ int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
 int layout activity_destinos 0x7f0c006a
+int layout activity_detalles_destino 0x7f0c006c
+int layout activity_favoritos 0x7f0c006d
 int layout activity_main 0x7f0c001c
-int layout activity_sstest 0x7f0c006b
 int layout custom_dialog 0x7f0c001d
 int layout design_bottom_navigation_item 0x7f0c001e
 int layout design_bottom_sheet_dialog 0x7f0c001f
@@ -3701,6 +3709,7 @@ int layout design_navigation_menu 0x7f0c0029
 int layout design_navigation_menu_item 0x7f0c002a
 int layout design_text_input_end_icon 0x7f0c002b
 int layout design_text_input_start_icon 0x7f0c002c
+int layout item_destino 0x7f0c006e
 int layout m3_alert_dialog 0x7f0c002d
 int layout m3_alert_dialog_actions 0x7f0c002e
 int layout m3_alert_dialog_title 0x7f0c002f
@@ -3792,6 +3801,7 @@ int string abc_searchview_description_voice 0x7f100017
 int string abc_shareactionprovider_share_with 0x7f100018
 int string abc_shareactionprovider_share_with_application 0x7f100019
 int string abc_toolbar_collapse_description 0x7f10001a
+int string agregar_a_favoritos 0x7f1000a3
 int string androidx_startup 0x7f10001b
 int string app_name 0x7f10001c
 int string appbar_scrolling_view_behavior 0x7f10001d

@@ -11,6 +11,7 @@
     </string-array>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="agregar_a_favoritos">Agregar a favoritos</string>
     <string name="app_name">Taller1</string>
     <string name="explo">Explorar destinos</string>
     <string name="fav">Favoritos</string>

@@ -1,5 +1,7 @@
 package com.example.taller1
 
+import java.io.Serializable
+
 data class DestinoTuristico(
     val id: Int,
     val nombre: String,
@@ -7,4 +9,4 @@ data class DestinoTuristico(
     val categoria: String,
     val plan: String,
     val precio: Int
-)
+): Serializable

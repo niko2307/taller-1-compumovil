@@ -1,12 +1,18 @@
 package com.example.taller1
 
+import android.app.Activity
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        var favoritos = mutableListOf<DestinoTuristico>()
+        const val REQUEST_CODE_DESTINOS = 1
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,9 +34,25 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("categoria", categoriaSeleccionada)
             }
 
-            // Iniciar la nueva actividad
-            startActivity(intent)
+            // Iniciar la nueva actividad esperando un resultado
+            startActivityForResult(intent, REQUEST_CODE_DESTINOS)
         }
 
+        val buttonFavoritos: Button = findViewById(R.id.button2)
+        buttonFavoritos.setOnClickListener {
+            val intent = Intent(this, FavoritosActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_DESTINOS && resultCode == Activity.RESULT_OK) {
+            // Obtener el destino seleccionado de los extras del intent
+            val destinoSeleccionado = data?.getSerializableExtra("destino") as DestinoTuristico
+
+            // Marcar el destino como favorito y añadirlo a la lista de favoritos
+            favoritos.add(destinoSeleccionado)
+        }
     }
 }

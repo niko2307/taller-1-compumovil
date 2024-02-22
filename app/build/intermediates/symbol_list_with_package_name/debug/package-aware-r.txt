@@ -3163,6 +3163,7 @@ id beginOnFirstDraw
 id beginning
 id bestChoice
 id blocking
+id botonAgregarFavoritos
 id bottom
 id bounce
 id bounceBoth
@@ -3430,6 +3431,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerViewFavoritos
 id report_drawn
 id reverseSawtooth
 id right
@@ -3521,6 +3523,11 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textViewCategoria
+id textViewNombre
+id textViewPais
+id textViewPlan
+id textViewPrecio
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3684,8 +3691,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_destinos
+layout activity_detalles_destino
+layout activity_favoritos
 layout activity_main
-layout activity_sstest
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3702,6 +3710,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout item_destino
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3793,6 +3802,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string agregar_a_favoritos
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior

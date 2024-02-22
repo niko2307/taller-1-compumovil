@@ -31,6 +31,12 @@
         android:testOnly="true"
         android:theme="@style/Theme.Taller1" >
         <activity
+            android:name="com.example.taller1.FavoritosActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.taller1.DetallesDestinoActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.taller1.DestinosActivity"
             android:exported="false" />
         <activity

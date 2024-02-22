@@ -1,19 +1,17 @@
 package com.example.taller1
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.IOException
 import java.io.InputStream
 
 class DestinosActivity : AppCompatActivity() {
-    private lateinit var listView: ListView
-    private lateinit var adapter: ArrayAdapter<String>
-    private lateinit var destinos: List<DestinoTuristico>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_destinos)
@@ -22,7 +20,7 @@ class DestinosActivity : AppCompatActivity() {
         val categoriaSeleccionada = intent.getStringExtra("categoria")
 
         // Cargar los destinos turísticos desde el archivo JSON
-        destinos = cargarDestinosDesdeJSON()
+        val destinos = cargarDestinosDesdeJSON()
 
         // Filtrar los destinos por la categoría seleccionada
         val destinosFiltrados = if (categoriaSeleccionada == "Todos") {
@@ -35,11 +33,25 @@ class DestinosActivity : AppCompatActivity() {
         val nombresDestinos = destinosFiltrados.map { it.nombre }
 
         // Inicializar el adaptador y la lista
-        adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, nombresDestinos)
-        listView = findViewById<ListView>(R.id.listViewDestinos)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, nombresDestinos)
+        val listView = findViewById<ListView>(R.id.listViewDestinos)
         listView.adapter = adapter
-    }
 
+        // Agregar el listener a la lista
+        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+            // Obtener el destino seleccionado
+            val destinoSeleccionado = destinosFiltrados[position]
+
+            // Crear un Intent para abrir la actividad de detalles del destino
+            val intent = Intent(this, DetallesDestinoActivity::class.java)
+
+            // Pasar los detalles del destino al intent
+            intent.putExtra("destino", destinoSeleccionado)
+
+            // Iniciar la actividad de detalles del destino
+            startActivity(intent)
+        }
+    }
 
     // Función para cargar los destinos turísticos desde un archivo JSON en la carpeta "assets"
     private fun cargarDestinosDesdeJSON(): List<DestinoTuristico> {
@@ -48,7 +60,7 @@ class DestinosActivity : AppCompatActivity() {
 
         // Parsear el JSON a una lista de objetos de tipo DestinoTuristico utilizando Gson
         val gson = Gson()
-        val listType = object : TypeToken<List<DestinoTuristico>>() {}.type //Lista en actividad_destino.XML
+        val listType = object : TypeToken<List<DestinoTuristico>>() {}.type
         return gson.fromJson(json, listType)
     }
 
@@ -57,7 +69,7 @@ class DestinosActivity : AppCompatActivity() {
         val json: String
         try {
             // Abrir un flujo de entrada para el archivo "destinos.json" ubicado en la carpeta "assets"
-            val inputStream: InputStream = assets.open("destinos.json")
+            val inputStream: InputStream = applicationContext.assets.open("destinos.json")
 
             // Obtener el tamaño del archivo
             val size: Int = inputStream.available()
