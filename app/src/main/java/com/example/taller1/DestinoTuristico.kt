@@ -2,6 +2,7 @@ package com.example.taller1
 
 import java.io.Serializable
 
+
 data class DestinoTuristico(
     val id: Int,
     val nombre: String,
