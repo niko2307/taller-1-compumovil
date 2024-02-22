@@ -1,7 +1,7 @@
-#Tue Feb 20 20:19:07 COT 2024
-base.0=C\:\\Users\\Public\\Taller12\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\Public\\Taller12\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\Public\\Taller12\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
+#Thu Feb 22 13:33:01 COT 2024
+base.0=C\:\\Users\\duper\\AndroidStudioProjects\\taller-1-compumovil\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\duper\\AndroidStudioProjects\\taller-1-compumovil\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\duper\\AndroidStudioProjects\\taller-1-compumovil\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=7/classes.dex

@@ -8,11 +8,17 @@ drawable ic_launcher_foreground
 id button
 id button2
 id button3
+id listViewDestinos
 id spinner
+layout activity_destinos
 layout activity_main
+layout activity_sstest
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+string explo
+string fav
+string reco
 style Base.Theme.Taller1
 style Theme.Taller1
 xml backup_rules

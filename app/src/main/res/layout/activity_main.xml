@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/spinner"
         android:layout_marginTop="28dp"
-        android:text="Explorar destinos"
+        android:text="@string/explo"
         tools:layout_editor_absoluteX="151dp"
         tools:layout_editor_absoluteY="381dp" />
 
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button"
         android:layout_marginTop="20dp"
-        android:text="favoritos"
+        android:text="@string/fav"
         tools:layout_editor_absoluteX="154dp"
         tools:layout_editor_absoluteY="447dp" />
 
@@ -36,9 +36,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button2"
         android:layout_marginTop="25dp"
-        android:text="Recomendaciones"
+        android:layout_marginBottom="40dp"
+        android:text="@string/reco"
         tools:layout_editor_absoluteX="159dp"
         tools:layout_editor_absoluteY="527dp" />
+
+
 
     <Spinner
         android:id="@+id/spinner"
@@ -46,10 +49,9 @@
         android:layout_height="wrap_content"
         android:entries="@array/opciones"
         android:gravity="center"
+        android:minHeight="48dp"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="311dp"
-
-        />
+        tools:layout_editor_absoluteY="311dp" />
 
 
 </RelativeLayout>

@@ -3309,6 +3309,7 @@ int id line1 0x7f0900ec
 int id line3 0x7f0900ed
 int id linear 0x7f0900ee
 int id listMode 0x7f0900ef
+int id listViewDestinos 0x7f0901f2
 int id list_item 0x7f0900f0
 int id m3_side_sheet 0x7f0900f1
 int id marquee 0x7f0900f2
@@ -3681,7 +3682,9 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout activity_destinos 0x7f0c006a
 int layout activity_main 0x7f0c001c
+int layout activity_sstest 0x7f0c006b
 int layout custom_dialog 0x7f0c001d
 int layout design_bottom_navigation_item 0x7f0c001e
 int layout design_bottom_sheet_dialog 0x7f0c001f
@@ -3804,9 +3807,11 @@ int string character_counter_pattern 0x7f100026
 int string clear_text_end_icon_content_description 0x7f100027
 int string error_a11y_label 0x7f100028
 int string error_icon_content_description 0x7f100029
+int string explo 0x7f1000a0
 int string exposed_dropdown_menu_content_description 0x7f10002a
 int string fab_transformation_scrim_behavior 0x7f10002b
 int string fab_transformation_sheet_behavior 0x7f10002c
+int string fav 0x7f1000a1
 int string hide_bottom_view_on_scroll_behavior 0x7f10002d
 int string icon_content_description 0x7f10002e
 int string item_view_role_description 0x7f10002f
@@ -3915,6 +3920,7 @@ int string path_password_eye 0x7f100095
 int string path_password_eye_mask_strike_through 0x7f100096
 int string path_password_eye_mask_visible 0x7f100097
 int string path_password_strike_through 0x7f100098
+int string reco 0x7f1000a2
 int string search_menu_title 0x7f100099
 int string searchbar_scrolling_view_behavior 0x7f10009a
 int string searchview_clear_text_content_description 0x7f10009b

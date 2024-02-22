@@ -1,5 +1,4 @@
-{
-"destinos":[
+[
     {"id": 1, "nombre": "Baia do Sancho", "pais": "Brazil", "categoria": "Playas", "plan": "Snorkeling y paseos en barco", "precio": 150},
     {"id": 2, "nombre": "Eagle Beach", "pais": "Aruba", "categoria": "Playas", "plan": "Relajación y deportes acuáticos", "precio": 200},
     {"id": 3, "nombre": "El Nido", "pais": "Filipinas", "categoria": "Playas", "plan": "Tour de islas y buceo", "precio": 180},
@@ -16,4 +15,3 @@
     {"id": 14, "nombre": "Congo", "pais": "República Democrática del Congo", "categoria": "Selvas", "plan": "Safari y observación de gorilas", "precio": 2000},
     {"id": 15, "nombre": "Borneo", "pais": "Indonesia/Malasia", "categoria": "Selvas", "plan": "Trekking y observación de la vida silvestre", "precio": 1300}
 ]
-}

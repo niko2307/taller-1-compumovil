@@ -12,6 +12,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">Taller1</string>
+    <string name="explo">Explorar destinos</string>
+    <string name="fav">Favoritos</string>
+    <string name="reco">Recomendaciones</string>
     <style name="Base.Theme.Taller1" parent="Theme.Material3.DayNight.NoActionBar">
         
         
