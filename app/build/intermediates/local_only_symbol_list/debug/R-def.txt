@@ -13,6 +13,7 @@ id listViewDestinos
 id recyclerViewFavoritos
 id spinner
 id textViewCategoria
+id textViewClima
 id textViewNombre
 id textViewPais
 id textViewPlan

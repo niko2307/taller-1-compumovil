@@ -3524,6 +3524,7 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textViewCategoria
+id textViewClima
 id textViewNombre
 id textViewPais
 id textViewPlan

@@ -5,13 +5,23 @@ import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import org.json.JSONException
+import org.json.JSONObject
 import java.io.IOException
 import java.io.InputStream
+import java.net.HttpURLConnection
+import java.net.URL
 
 class DestinosActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_destinos)
@@ -38,19 +48,24 @@ class DestinosActivity : AppCompatActivity() {
         listView.adapter = adapter
 
         // Agregar el listener a la lista
-        listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            // Obtener el destino seleccionado
-            val destinoSeleccionado = destinosFiltrados[position]
+        listView.onItemClickListener =
+            AdapterView.OnItemClickListener { parent, view, position, id ->
+                // Obtener el destino seleccionado
+                val destinoSeleccionado = destinosFiltrados[position]
 
-            // Crear un Intent para abrir la actividad de detalles del destino
-            val intent = Intent(this, DetallesDestinoActivity::class.java)
+                // Crear un Intent para abrir la actividad de detalles del destino
+                val intent = Intent(this, DetallesDestinoActivity::class.java)
 
-            // Pasar los detalles del destino al intent
-            intent.putExtra("destino", destinoSeleccionado)
 
-            // Iniciar la actividad de detalles del destino
-            startActivity(intent)
-        }
+                // Pasar los detalles del destino al intent
+                intent.putExtra("destino", destinoSeleccionado)
+
+                getclima(destinoSeleccionado.nombre)
+
+
+                // Iniciar la actividad de detalles del destino
+                startActivity(intent)
+            }
     }
 
     // Función para cargar los destinos turísticos desde un archivo JSON en la carpeta "assets"
@@ -60,7 +75,7 @@ class DestinosActivity : AppCompatActivity() {
 
         // Parsear el JSON a una lista de objetos de tipo DestinoTuristico utilizando Gson
         val gson = Gson()
-        val listType = object : TypeToken<List<DestinoTuristico>>() {}.type
+        val listType = object : com.google.gson.reflect.TypeToken<List<DestinoTuristico>>() {}.type
         return gson.fromJson(json, listType)
     }
 
@@ -92,4 +107,44 @@ class DestinosActivity : AppCompatActivity() {
         }
         return json // Retornar el contenido del archivo como un String
     }
+
+
+    // función para cargar el clima y llamar al callback con el estado del clima
+    private fun getclima(ciudad: String) {
+        GlobalScope.launch(Dispatchers.IO) {
+            val apiKey = "d5t6za7reiao3amugb1gqgp3n7iui6kz70h8f3my"
+            val url = URL("https://api.meteosource.com/v1/forecast.json?key=$apiKey&location=$ciudad")
+
+            try {
+                val connection = url.openConnection() as HttpURLConnection
+                connection.requestMethod = "GET"
+                val inputStream = connection.inputStream
+                val respuesta = inputStream.bufferedReader().use { it.readText() }
+                // Procesar la respuesta para obtener el estado del clima
+                val estado = procesarRespuestaClima(respuesta)
+               estado
+
+                connection.disconnect()
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    // función para procesar la respuesta JSON y obtener el estado del clima
+    private fun procesarRespuestaClima(respuesta: String): String {
+        return try {
+            val jsonObject = JSONObject(respuesta)
+            // Obtener el objeto JSON "current" que contiene la información actual del clima
+            val currentWeather = jsonObject.getJSONObject("current")
+            // Obtener el valor del campo "weather" que representa el estado del clima
+            val weather = currentWeather.getString("icon")
+           weather // Devolver el estado del clima
+        } catch (e: JSONException) {
+            e.printStackTrace()
+            "Error al procesar la respuesta JSON del clima"
+        }
+    }
 }
+
+

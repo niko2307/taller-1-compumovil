@@ -9,5 +9,6 @@ data class DestinoTuristico(
     val pais: String,
     val categoria: String,
     val plan: String,
-    val precio: Int
+    val precio: Int,
+    val clima :String
 ): Serializable
