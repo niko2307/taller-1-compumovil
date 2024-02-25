@@ -1,5 +1,6 @@
 package com.example.taller1
 
+import Clima
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
@@ -9,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -53,15 +53,14 @@ class DestinosActivity : AppCompatActivity() {
                 // Obtener el destino seleccionado
                 val destinoSeleccionado = destinosFiltrados[position]
 
+                getclima(destinoSeleccionado.nombre)
+
                 // Crear un Intent para abrir la actividad de detalles del destino
                 val intent = Intent(this, DetallesDestinoActivity::class.java)
 
 
                 // Pasar los detalles del destino al intent
                 intent.putExtra("destino", destinoSeleccionado)
-
-                getclima(destinoSeleccionado.nombre)
-
 
                 // Iniciar la actividad de detalles del destino
                 startActivity(intent)
@@ -109,42 +108,64 @@ class DestinosActivity : AppCompatActivity() {
     }
 
 
-    // función para cargar el clima y llamar al callback con el estado del clima
+    // función para cargar el clima y actualizar la interfaz de usuario con el estado del clima
+
+    // Función para cargar el clima y actualizar la interfaz de usuario con el estado del clima
     private fun getclima(ciudad: String) {
         GlobalScope.launch(Dispatchers.IO) {
-            val apiKey = "d5t6za7reiao3amugb1gqgp3n7iui6kz70h8f3my"
-            val url = URL("https://api.meteosource.com/v1/forecast.json?key=$apiKey&location=$ciudad")
-
             try {
+                val apiKey = "vLQUHpYr69uG4bFT"
+                val url = URL("http://my.meteoblue.com/packages/basic-10min_basic-1h_basic-day?lat=47.56&lon=7.57&apikey=$apiKey&location=$ciudad")
+
                 val connection = url.openConnection() as HttpURLConnection
                 connection.requestMethod = "GET"
                 val inputStream = connection.inputStream
                 val respuesta = inputStream.bufferedReader().use { it.readText() }
-                // Procesar la respuesta para obtener el estado del clima
-                val estado = procesarRespuestaClima(respuesta)
-               estado
+
+                // Verificar si la respuesta no está vacía
+                if (respuesta.isNotEmpty()) {
+                    // Procesar la respuesta para obtener el estado del clima
+                    val clima = Clima.fromJson(respuesta)
+
+                    // Actualizar la interfaz de usuario con la información del clima en el hilo principal
+                    runOnUiThread {
+                        // Obtener el TextView de la interfaz de usuario
+                        val textViewClima = findViewById<TextView>(R.id.textViewClima)
+                        // Actualizar el texto con el resumen del clima
+                        textViewClima.text = clima.time.toString()
+                    }
+                } else {
+                    // Mostrar un mensaje de error si la respuesta está vacía
+                    runOnUiThread {
+                        Toast.makeText(this@DestinosActivity, "La respuesta del servidor está vacía", Toast.LENGTH_SHORT).show()
+                    }
+                }
 
                 connection.disconnect()
             } catch (e: IOException) {
+                // Manejar errores de conexión de red
                 e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(this@DestinosActivity, "Error de conexión: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: JSONException) {
+                // Manejar errores al procesar la respuesta JSON
+                e.printStackTrace()
+                runOnUiThread {
+                    Toast.makeText(this@DestinosActivity, "Error al procesar la respuesta JSON del servidor", Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
 
-    // función para procesar la respuesta JSON y obtener el estado del clima
-    private fun procesarRespuestaClima(respuesta: String): String {
-        return try {
-            val jsonObject = JSONObject(respuesta)
-            // Obtener el objeto JSON "current" que contiene la información actual del clima
-            val currentWeather = jsonObject.getJSONObject("current")
-            // Obtener el valor del campo "weather" que representa el estado del clima
-            val weather = currentWeather.getString("icon")
-           weather // Devolver el estado del clima
-        } catch (e: JSONException) {
-            e.printStackTrace()
-            "Error al procesar la respuesta JSON del clima"
-        }
-    }
 }
+
+
+
+
+
+
+
+
 
 

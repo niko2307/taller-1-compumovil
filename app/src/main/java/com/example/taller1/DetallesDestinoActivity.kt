@@ -21,7 +21,6 @@ class DetallesDestinoActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.textViewCategoria).text = destino.categoria
         findViewById<TextView>(R.id.textViewPlan).text = destino.plan
         findViewById<TextView>(R.id.textViewPrecio).text = destino.precio.toString()
-        findViewById<TextView>(R.id.textViewClima).text=destino.clima
 
         // Agregar listener al botón para añadir el destino a favoritos
         val botonAgregarFavoritos: Button = findViewById(R.id.botonAgregarFavoritos)
