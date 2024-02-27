@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="opciones">
+        <item>Todos</item>
+        <item>Playas</item>
+        <item>Montañas</item>
+        <item>Ciudades Históricas</item>
+        <item>Maravillas del Mundo</item>
+        <item>Selvas</item>
+
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="agregar_a_favoritos">Agregar a favoritos</string>
+    <string name="app_name">Taller1</string>
+    <string name="explo">Explorar destinos</string>
+    <string name="fav">Favoritos</string>
+    <string name="reco">Recomendaciones</string>
+    <style name="Base.Theme.Taller1" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Taller1" parent="Base.Theme.Taller1"/>
+</resources>
