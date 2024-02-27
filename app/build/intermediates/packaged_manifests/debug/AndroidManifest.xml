@@ -32,6 +32,9 @@
         android:theme="@style/Theme.Taller1"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.taller1.DestinoAleatorioActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.taller1.FavoritosActivity"
             android:exported="false" />
         <activity

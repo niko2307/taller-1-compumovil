@@ -3,6 +3,7 @@ package com.example.taller1
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
@@ -41,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         val buttonFavoritos: Button = findViewById(R.id.button2)
         buttonFavoritos.setOnClickListener {
             val intent = Intent(this, FavoritosActivity::class.java)
+            startActivity(intent)
+        }
+
+        val buttonRecomendaciones: Button = findViewById(R.id.button3)
+        buttonRecomendaciones.setOnClickListener {
+            val intent = Intent(this, DestinoAleatorioActivity::class.java)
             startActivity(intent)
         }
     }

@@ -18,6 +18,7 @@ id textViewNombre
 id textViewPais
 id textViewPlan
 id textViewPrecio
+layout activity_destino_aleatorio
 layout activity_destinos
 layout activity_detalles_destino
 layout activity_favoritos

@@ -1,5 +1,6 @@
 package com.example.taller1
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -13,6 +14,7 @@ class DetallesDestinoActivity : AppCompatActivity() {
 
     private lateinit var queue: RequestQueue
     private lateinit var weatherApiService: WeatherApiService
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detalles_destino)
