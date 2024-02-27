@@ -4,7 +4,7 @@
             "outputFile": "com.example.taller1.app-mergeDebugResources-29:/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Niko\\.gradle\\caches\\transforms-3\\c2b212a5670cdd6be08894c8e5031ce0\\transformed\\material-1.11.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
+                    "source": "C:\\Users\\duper\\.gradle\\caches\\transforms-3\\c0b6233df693ffa1cebbe0cb3bc97948\\transformed\\material-1.11.0\\res\\values-h480dp-land-v13\\values-h480dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
